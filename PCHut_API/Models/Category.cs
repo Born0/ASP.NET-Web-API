@@ -7,7 +7,7 @@ namespace PCHut_API.Models
 
     public partial class Category
     {
-		//nothing
+		
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Category()
         {
