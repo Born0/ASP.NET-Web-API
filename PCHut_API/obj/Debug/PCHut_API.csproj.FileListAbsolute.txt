@@ -93,11 +93,9 @@ D:\Class\ASP .net\ASP.NET web-API\PCHut_API\bin\System.Web.Http.xml
 D:\Class\ASP .net\ASP.NET web-API\PCHut_API\bin\System.Web.Http.WebHost.xml
 D:\Class\ASP .net\ASP.NET web-API\PCHut_API\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 D:\Class\ASP .net\ASP.NET web-API\PCHut_API\obj\Debug\PCHut_API.csprojAssemblyReference.cache
-D:\Class\ASP .net\ASP.NET web-API\PCHut_API\obj\Debug\PCHut_API.Migrations.InitialDb.resources
-D:\Class\ASP .net\ASP.NET web-API\PCHut_API\obj\Debug\PCHut_API.Migrations.DataValidation.resources
-D:\Class\ASP .net\ASP.NET web-API\PCHut_API\obj\Debug\PCHut_API.csproj.GenerateResource.cache
 D:\Class\ASP .net\ASP.NET web-API\PCHut_API\obj\Debug\PCHut_API.csproj.CoreCompileInputs.cache
 D:\Class\ASP .net\ASP.NET web-API\PCHut_API\obj\Debug\PCHut_API.csproj.CopyComplete
 D:\Class\ASP .net\ASP.NET web-API\PCHut_API\obj\Debug\PCHut_API.dll
 D:\Class\ASP .net\ASP.NET web-API\PCHut_API\obj\Debug\PCHut_API.pdb
-D:\Class\ASP .net\ASP.NET web-API\PCHut_API\obj\Debug\PCHut_API.Migrations.CustomerEmailValidation.resources
+D:\Class\ASP .net\ASP.NET Web-API\PCHut_API\obj\Debug\PCHut_API.Migrations.InitialDb.resources
+D:\Class\ASP .net\ASP.NET Web-API\PCHut_API\obj\Debug\PCHut_API.csproj.GenerateResource.cache

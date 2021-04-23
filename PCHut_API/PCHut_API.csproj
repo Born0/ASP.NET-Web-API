@@ -97,17 +97,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202104222053421_InitialDb.cs" />
-    <Compile Include="Migrations\202104222053421_InitialDb.designer.cs">
-      <DependentUpon>202104222053421_InitialDb.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202104230921470_DataValidation.cs" />
-    <Compile Include="Migrations\202104230921470_DataValidation.designer.cs">
-      <DependentUpon>202104230921470_DataValidation.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202104230951485_CustomerEmailValidation.cs" />
-    <Compile Include="Migrations\202104230951485_CustomerEmailValidation.designer.cs">
-      <DependentUpon>202104230951485_CustomerEmailValidation.cs</DependentUpon>
+    <Compile Include="Migrations\202104231917470_InitialDb.cs" />
+    <Compile Include="Migrations\202104231917470_InitialDb.designer.cs">
+      <DependentUpon>202104231917470_InitialDb.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Admin.cs" />
@@ -144,14 +136,8 @@
     <Folder Include="Controllers\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202104222053421_InitialDb.resx">
-      <DependentUpon>202104222053421_InitialDb.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104230921470_DataValidation.resx">
-      <DependentUpon>202104230921470_DataValidation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104230951485_CustomerEmailValidation.resx">
-      <DependentUpon>202104230951485_CustomerEmailValidation.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202104231917470_InitialDb.resx">
+      <DependentUpon>202104231917470_InitialDb.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
