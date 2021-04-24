@@ -23,7 +23,7 @@ namespace PCHut_API.Models
         [Required]
         public int Delivery_status { get; set; }
     
-        public virtual Customer Customer { get; set; }
-        public virtual Product Product { get; set; }
+        public Customer Customer { get; set; }
+        public Product Product { get; set; }
     }
 }

@@ -5,17 +5,18 @@ using System.Web;
 using PCHut_API.Repository;
 using PCHut_API.Models;
 using System.Data.Entity.Infrastructure;
+using System.Data.SqlClient;
 
 namespace PCHut_API.Repository
 {
     public class ProductRepository : Repository<Product>
     {
-        PcHutDbContext context = new PcHutDbContext();
+        private PcHutDbContext context = new PcHutDbContext();
 
-        public DbSqlQuery<Product> TopLaptop()
+        public Product TopLaptop()
         {
-            var product = this.context.Products.SqlQuery(@"select * from Products where Product_id in (select top 1 Product_id from Sales_record where Product_id in (select Product_id from Products where Category_id = (select Category_id from Categories where Categories.Name = 'laptop')) group by Product_id order by sum(Quantity) desc)");
-            return product;
+            var laptop = context.Products.SqlQuery(@"select * from Products where Product_id in (select top 1 Product_id from Sales_record where Product_id in (select Product_id from Products where Category_id = (select Category_id from Categories where Categories.Name = 'laptop')) group by Product_id order by sum(Quantity) desc)").First();
+            return laptop;
         }
     }
 }

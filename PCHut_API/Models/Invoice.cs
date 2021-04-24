@@ -23,9 +23,9 @@ namespace PCHut_API.Models
         [Required]
         public int Branch_id { get; set; }
     
-        public virtual Branch Branch { get; set; }
-        public virtual Branch_Manager Branch_Manager { get; set; }
-        public virtual Customer Customer { get; set; }
-        public virtual Discount Discount { get; set; }
+        public Branch Branch { get; set; }
+        public Branch_Manager Branch_Manager { get; set; }
+        public Customer Customer { get; set; }
+        public Discount Discount { get; set; }
     }
 }

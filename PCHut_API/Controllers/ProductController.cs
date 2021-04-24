@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Web.Http;
 using PCHut_API.Repository;
 using PCHut_API.Models;
+using System.Data.Entity.Infrastructure;
 
 namespace PCHut_API.Controllers
 {
@@ -73,25 +74,13 @@ namespace PCHut_API.Controllers
             return Ok(singleProduct);
         }
 
-        [HttpGet, Route("api/products/topLaptopDetails")]
+        [HttpGet]
+        [Route("api/products/topLaptopDetails")]
         public IHttpActionResult TopLaptopDetails()
         {
             ProductRepository products = new ProductRepository();
-            var laptop = products.TopLaptop();
-
-            Product pr = new Product();
-
-            foreach (Product p in laptop)
-            {
-                pr.Product_id = p.Product_id;
-                pr.Product_name = p.Product_name;
-                pr.Price = p.Price;
-                pr.Warranty = p.Warranty;
-                pr.Special = p.Special;
-                pr.Brand = p.Brand;
-                pr.Category = p.Category;
-            }
-            return Ok(pr);
+            Product laptop = products.TopLaptop();
+            return Ok(laptop);
         }
     }
 }

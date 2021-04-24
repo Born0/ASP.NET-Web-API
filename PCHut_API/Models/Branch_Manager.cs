@@ -33,8 +33,8 @@ namespace PCHut_API.Models
         //[ForeignKey("Branch_id")]
         //public Branch Branch { get; set; }
         [Required]
-        public virtual Branch Branch { get; set; }
+        public Branch Branch { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Invoice> Invoices { get; set; }
+        public ICollection<Invoice> Invoices { get; set; }
     }
 }
