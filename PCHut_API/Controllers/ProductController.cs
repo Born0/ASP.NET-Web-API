@@ -42,5 +42,35 @@ namespace PCHut_API.Controllers
             productRepository.Insert(product);
             return Created("abc", product);
         }
+
+        [HttpPut]
+        public IHttpActionResult Put([FromUri] int id, [FromBody] Product product) //Edit Product
+        {
+            product.Product_id = id;
+            ProductRepository productRepository = new ProductRepository();
+            productRepository.Update(product);
+            return Ok(product);
+        }
+
+        [HttpPut]
+        [Route("api/products/changeProductStatus/{id}/{branchId}")]
+        public IHttpActionResult ChangeProductStatus(int id /*productId*/, int branchId /*branchId*/) //Change Product Status
+        {
+            ProductRepository product1 = new ProductRepository();
+            Product singleProduct = product1.Get(id);
+
+            if (singleProduct.Status == 1)
+            {
+                singleProduct.Status = 0;
+                product1.Update(singleProduct);
+            }
+            else
+            {
+                singleProduct.Status = 1;
+                product1.Update(singleProduct);
+            }
+
+            return Ok(singleProduct);
+        }
     }
 }
