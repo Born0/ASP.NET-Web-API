@@ -3,6 +3,7 @@ namespace PCHut_API.Models
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
+    using Newtonsoft.Json;
 
     public partial class Product
     {
@@ -37,10 +38,14 @@ namespace PCHut_API.Models
         [Required]
         public int Branch_id { get; set; }
     
+        [JsonIgnore]
         public virtual Branch Branch { get; set; }
+        [JsonIgnore]
         public virtual Brand Brand { get; set; }
+        [JsonIgnore]
         public virtual Category Category { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        [JsonIgnore]
         public virtual ICollection<Sales_Record> Sales_Record { get; set; }
     }
 }
