@@ -9,7 +9,7 @@ using System.Web.Http;
 
 namespace PCHut_API.Controllers
 {
-    [RoutePrefix("api/branch")]
+    [RoutePrefix("api/category")]
     public class CategoryController : ApiController
     {
         private CategoryRepository CategoryRepository = new CategoryRepository();

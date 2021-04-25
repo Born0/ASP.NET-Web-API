@@ -25,13 +25,13 @@ namespace PCHut_API.Controllers
             return Ok(BranchManagerRepository.Get(id));
         }
 
-        [Route("", Name = "Branch_ManagerPath"), HttpPost]
+        [Route("", Name = "BranchManagerPath"), HttpPost]
         public IHttpActionResult Create(BranchManager branch_Manager)
         {
            if(ModelState.IsValid)
             {
                 BranchManagerRepository.Insert(branch_Manager);
-                string url = Url.Link("Branch_ManagerPath", new { id = branch_Manager.BranchManagerId });
+                string url = Url.Link("BranchManagerPath", new { id = branch_Manager.BranchManagerId });
                 return Created(url, branch_Manager);
             }
            else
