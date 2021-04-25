@@ -9,20 +9,20 @@ using PCHut_API.Repository;
 
 namespace PCHut_API.Controllers
 {
-    [RoutePrefix("api/branch_manager")]
-    public class Branch_ManagerController : ApiController
+    [RoutePrefix("api/branchManager")]
+    public class BranchManagerController : ApiController
     {
-        Branch_ManagerRepository Branch_ManagerRepository = new Branch_ManagerRepository();
+        BranchManagerRepository BranchManagerRepository = new BranchManagerRepository();
         [Route(""),HttpGet]
         public IHttpActionResult Get() //Get Product List
         {
-            return Ok(Branch_ManagerRepository.GetAll());
+            return Ok(BranchManagerRepository.GetAll());
         }
 
         [Route("{id}"), HttpGet]
         public IHttpActionResult Get(int id)
         {
-            return Ok(Branch_ManagerRepository.Get(id));
+            return Ok(BranchManagerRepository.Get(id));
         }
 
         [Route("", Name = "Branch_ManagerPath"), HttpPost]
@@ -30,7 +30,7 @@ namespace PCHut_API.Controllers
         {
            if(ModelState.IsValid)
             {
-                Branch_ManagerRepository.Insert(branch_Manager);
+                BranchManagerRepository.Insert(branch_Manager);
                 string url = Url.Link("Branch_ManagerPath", new { id = branch_Manager.BranchManagerId });
                 return Created(url, branch_Manager);
             }
@@ -44,7 +44,7 @@ namespace PCHut_API.Controllers
         public IHttpActionResult Edit([FromBody] BranchManager branch_Manager, [FromUri] int id)
         {
             branch_Manager.BranchManagerId = id;
-            Branch_ManagerRepository.Update(branch_Manager);
+            BranchManagerRepository.Update(branch_Manager);
             return Ok(branch_Manager);
         }
 
@@ -52,7 +52,7 @@ namespace PCHut_API.Controllers
         [Route("{id}"), HttpDelete]
         public IHttpActionResult Delete(int id)
         {
-            Branch_ManagerRepository.Delete(id);
+            BranchManagerRepository.Delete(id);
             return StatusCode(HttpStatusCode.NoContent);
         }
     }

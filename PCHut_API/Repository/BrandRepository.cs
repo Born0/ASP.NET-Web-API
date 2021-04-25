@@ -6,7 +6,7 @@ using System.Web;
 
 namespace PCHut_API.Repository
 {
-    public class Branch_ManagerRepository : Repository<BranchManager>
+    public class BrandRepository : Repository<Brand>
     {
     }
 }
