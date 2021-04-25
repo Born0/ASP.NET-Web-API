@@ -13,9 +13,9 @@ namespace PCHut_API.Models
             this.Invoices = new HashSet<Invoice>();
         }
     
-        [Key,Required]
-        public int Discount_id { get; set; }
-        [Required, StringLength(50, ErrorMessage = "name can't be longer than 50 character")]
+        
+        public int DiscountId { get; set; }
+        [Required,MaxLength(50)]
         public string Name { get; set; }
         [Required,Range(0.0,100.0,ErrorMessage ="must be between 0 to 100")]
         public double Percentage { get; set; }

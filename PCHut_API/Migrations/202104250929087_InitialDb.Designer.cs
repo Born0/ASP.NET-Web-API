@@ -13,7 +13,7 @@ namespace PCHut_API.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202104231917470_InitialDb"; }
+            get { return "202104250929087_InitialDb"; }
         }
         
         string IMigrationMetadata.Source

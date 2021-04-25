@@ -47,7 +47,7 @@ namespace PCHut_API.Controllers
         [HttpPut]
         public IHttpActionResult Put([FromUri] int id, [FromBody] Product product) //Edit Product
         {
-            product.Product_id = id;
+            product.ProductId = id;
             ProductRepository productRepository = new ProductRepository();
             productRepository.Update(product);
             return Ok(product);

@@ -10,17 +10,17 @@ namespace PCHut_API.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Product()
         {
-            this.Sales_Record = new HashSet<Sales_Record>();
+            this.SalesRecord = new HashSet<SalesRecord>();
         }
 
-        [Key,Required]
-        public int Product_id { get; set; }
-        [Required, StringLength(150, ErrorMessage = "name can't be longer than 150 character")]
-        public string Product_name { get; set; }
+      
+        public int ProductId { get; set; }
+        [Required,MaxLength(150)]
+        public string ProductName { get; set; }
         [Required]
-        public int Brand_id { get; set; }
+        public int BrandId { get; set; }
         [Required]
-        public int Category_id { get; set; }
+        public int CategoryId { get; set; }
         [Required]
         public string Details { get; set; }
         [Required]
@@ -36,7 +36,7 @@ namespace PCHut_API.Models
         
         public string Image { get; set; }
         [Required]
-        public int Branch_id { get; set; }
+        public int BranchId { get; set; }
     
         //[JsonIgnore]
         public Branch Branch { get; set; }
@@ -46,6 +46,6 @@ namespace PCHut_API.Models
         public Category Category { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         //[JsonIgnore]
-        public ICollection<Sales_Record> Sales_Record { get; set; }
+        public ICollection<SalesRecord> SalesRecord { get; set; }
     }
 }

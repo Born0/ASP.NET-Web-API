@@ -5,6 +5,7 @@ namespace PCHut_API.Models
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
 
     public partial class Branch
     {
@@ -15,18 +16,18 @@ namespace PCHut_API.Models
             this.Products = new HashSet<Product>();
         }
 
-        [Key, Required]
-        public int Branch_id { get; set; }
-        [Required, StringLength(50, ErrorMessage = "name can't be longer than 50 character")]
+        //[ForeignKey("BranchManager")]
+        public int BranchId { get; set; }
+        [Required,MaxLength(50)]
         public string Name { get; set; }
-        [Required(ErrorMessage = "Can't be empty")]
-        [StringLength(150, ErrorMessage = "Address can't be longer than 50 character")]
+        [Required]
+        [MaxLength(150)]
         public string Address { get; set; }
     
-        public virtual Branch_Manager Branch_Manager { get; set; }
+        public  BranchManager BranchManager { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Invoice> Invoices { get; set; }
+        public  ICollection<Invoice> Invoices { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Product> Products { get; set; }
+        public  ICollection<Product> Products { get; set; }
     }
 }

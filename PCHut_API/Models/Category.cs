@@ -14,9 +14,9 @@ namespace PCHut_API.Models
             this.Products = new HashSet<Product>();
         }
 
-        [Key,Required]
-        public int Category_id { get; set; }
-        [Required, StringLength(50, ErrorMessage = "name can't be longer than 50 character")]
+        
+        public int CategoryId { get; set; }
+        [Required, MaxLength(50)]
         public string Name { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

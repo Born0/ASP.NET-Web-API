@@ -6,25 +6,25 @@ namespace PCHut_API.Models
     
     public partial class Invoice
     {
-        [Key,Required]
-        public int Invoice_id { get; set; }
+        
+        public int InvoiceId { get; set; }
         [Required]
-        public int Customer_id { get; set; }
+        public int CustomerId { get; set; }
         [Required]
         public System.DateTime Date { get; set; }
         [Required]
-        public int Branch_manager_id { get; set; }
+        public int BranchManagerId { get; set; }
         [Required]
-        public double Added_sub_total { get; set; }
+        public double AddedSubTotal { get; set; }
         [Required]
-        public int Discount_id { get; set; }
+        public int DiscountId { get; set; }
         [Required]
-        public double Total_amount { get; set; }
+        public double TotalAmount { get; set; }
         [Required]
-        public int Branch_id { get; set; }
+        public int BranchId { get; set; }
     
         public Branch Branch { get; set; }
-        public Branch_Manager Branch_Manager { get; set; }
+        public BranchManager BranchManager { get; set; }
         public Customer Customer { get; set; }
         public Discount Discount { get; set; }
     }

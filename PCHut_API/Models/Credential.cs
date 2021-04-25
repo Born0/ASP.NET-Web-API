@@ -7,13 +7,13 @@ namespace PCHut_API.Models
 
     public partial class Credential
     {
-        [Key, Required]
-        public int Credential_id { get; set; }
+        
+        public int CredentialId { get; set; }
         [Required]
-        public int User_id { get; set; }
+        public int UserId { get; set; }
         [Required]
         public string Password { get; set; }
         [Required]
-        public int User_type { get; set; }
+        public int UserType { get; set; }
     }
 }
