@@ -149,3 +149,6 @@ D:\Final Term API Project\ASP.NET-Web-API\PCHut_API\obj\Debug\PCHut_API.csproj.C
 D:\Final Term API Project\ASP.NET-Web-API\PCHut_API\obj\Debug\PCHut_API.csproj.CopyComplete
 D:\Final Term API Project\ASP.NET-Web-API\PCHut_API\obj\Debug\PCHut_API.dll
 D:\Final Term API Project\ASP.NET-Web-API\PCHut_API\obj\Debug\PCHut_API.pdb
+D:\Final Term API Project\ASP.NET-Web-API\PCHut_API\bin\System.Web.Cors.dll
+D:\Final Term API Project\ASP.NET-Web-API\PCHut_API\bin\System.Web.Http.Cors.dll
+D:\Final Term API Project\ASP.NET-Web-API\PCHut_API\bin\System.Web.Http.Cors.xml
