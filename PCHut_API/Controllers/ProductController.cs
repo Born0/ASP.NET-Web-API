@@ -39,6 +39,7 @@ namespace PCHut_API.Controllers
             {
                 return StatusCode(HttpStatusCode.NoContent);
             }
+            product.Status = 1;
             ProductRepository productRepository = new ProductRepository();
             productRepository.Insert(product);
             return Created("abc", product);

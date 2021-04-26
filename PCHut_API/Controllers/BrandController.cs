@@ -9,7 +9,7 @@ using System.Web.Http;
 
 namespace PCHut_API.Controllers
 {
-    [RoutePrefix("api/brand")]
+    [RoutePrefix("api/brands")]
     public class BrandController : ApiController
     {
         private BrandRepository brandRepository = new BrandRepository();
@@ -22,7 +22,12 @@ namespace PCHut_API.Controllers
         [Route("{id}"),HttpGet]
         public IHttpActionResult Get(int id)
         {
-            return Ok(brandRepository.Get(id));
+            Brand brand = brandRepository.Get(id);
+            if (brand == null)
+            {
+                return StatusCode(HttpStatusCode.NoContent);
+            }
+            return Ok(brand);
         }
 
         [Route("", Name = "BrandPath"), HttpPost]
@@ -45,6 +50,5 @@ namespace PCHut_API.Controllers
             brandRepository.Delete(id);
             return StatusCode(HttpStatusCode.NoContent);
         }
-
     }
 }

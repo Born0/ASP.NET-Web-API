@@ -9,7 +9,7 @@ using System.Web.Http;
 
 namespace PCHut_API.Controllers
 {
-    [RoutePrefix("api/category")]
+    [RoutePrefix("api/categories")]
     public class CategoryController : ApiController
     {
         private CategoryRepository CategoryRepository = new CategoryRepository();
@@ -22,6 +22,11 @@ namespace PCHut_API.Controllers
         [Route("{id}"), HttpGet]
         public IHttpActionResult Get(int id)
         {
+            Category category = CategoryRepository.Get(id);
+            if (category == null)
+            {
+                return StatusCode(HttpStatusCode.NoContent);
+            }
             return Ok(CategoryRepository.Get(id));
         }
         [Route("", Name = "CategoryPath"), HttpPost]

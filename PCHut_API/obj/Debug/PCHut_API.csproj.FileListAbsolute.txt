@@ -153,3 +153,7 @@ D:\Class\ASP .net\ASP.NET web-API\PCHut_API\bin\System.Web.Http.Cors.dll
 D:\Class\ASP .net\ASP.NET web-API\PCHut_API\bin\System.Web.Http.Cors.xml
 D:\Class\ASP .net\ASP.NET web-API\PCHut_API\obj\Debug\PCHut_API.csprojAssemblyReference.cache
 D:\Class\ASP .net\ASP.NET web-API\PCHut_API\obj\Debug\PCHut_API.Migrations.NewTableAdded.resources
+D:\Final Term API Project\ASP.NET-Web-API\PCHut_API\bin\System.Web.Cors.dll
+D:\Final Term API Project\ASP.NET-Web-API\PCHut_API\bin\System.Web.Http.Cors.dll
+D:\Final Term API Project\ASP.NET-Web-API\PCHut_API\bin\System.Web.Http.Cors.xml
+D:\Final Term API Project\ASP.NET-Web-API\PCHut_API\obj\Debug\PCHut_API.Migrations.NewTableAdded.resources

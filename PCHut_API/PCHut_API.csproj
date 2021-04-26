@@ -105,6 +105,7 @@
     <Compile Include="Controllers\BrandController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\CredentialController.cs" />
+    <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\ProductSearchController.cs" />
     <Compile Include="Global.asax.cs">
@@ -143,6 +144,8 @@
     <Compile Include="Repository\IRepository.cs" />
     <Compile Include="Repository\ProductRepository.cs" />
     <Compile Include="Repository\Repository.cs" />
+    <Compile Include="View_Model\BarChartModel.cs" />
+    <Compile Include="View_Model\TopCustomerViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -15,7 +15,7 @@ namespace PCHut_API.Repository
 
         public Product TopLaptop()
         {
-            var laptop = context.Products.SqlQuery(@"select * from Products where Product_id in (select top 1 Product_id from Sales_record where Product_id in (select Product_id from Products where Category_id = (select Category_id from Categories where Categories.Name = 'laptop')) group by Product_id order by sum(Quantity) desc)").First();
+            var laptop = context.Products.SqlQuery(@"select * from Products where ProductId in (select top 1 ProductId from SalesRecords where ProductId in (select ProductId from Products where CategoryId = (select CategoryId from Categories where Categories.Name = 'laptop')) group by ProductId order by sum(Quantity) desc)").First();
             return laptop;
         }
 
