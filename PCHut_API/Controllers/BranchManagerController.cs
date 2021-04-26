@@ -9,7 +9,7 @@ using PCHut_API.Repository;
 
 namespace PCHut_API.Controllers
 {
-    [RoutePrefix("api/branchManager")]
+    [RoutePrefix("api/branchManagers")]
     public class BranchManagerController : ApiController
     {
         BranchManagerRepository BranchManagerRepository = new BranchManagerRepository();

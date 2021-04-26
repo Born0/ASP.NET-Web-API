@@ -9,11 +9,11 @@ using System.Web.Http;
 
 namespace PCHut_API.Controllers
 {
-    [RoutePrefix("api/branch")]
+    [RoutePrefix("api/branches")]
     public class BranchController : ApiController
     {
         private BranchRepository branchRepository = new BranchRepository();
-        [Route(), HttpGet]
+        [Route(""), HttpGet]
         public IHttpActionResult Get() //Get Product List
         {
                return Ok(branchRepository.GetAll());

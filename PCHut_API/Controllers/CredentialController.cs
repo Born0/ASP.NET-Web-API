@@ -9,11 +9,11 @@ using System.Web.Http;
 
 namespace PCHut_API.Controllers
 {
-    [RoutePrefix("api/credential")]
+    [RoutePrefix("api/credentials")]
     public class CredentialController : ApiController
     {
         private CredentialRepository credentialRepository = new CredentialRepository();
-        [Route(), HttpGet]
+        [Route(""), HttpGet]
         public IHttpActionResult Get() //Get Product List
         {
             return Ok(credentialRepository.GetAll());

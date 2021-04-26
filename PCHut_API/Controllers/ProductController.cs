@@ -10,9 +10,10 @@ using System.Data.Entity.Infrastructure;
 
 namespace PCHut_API.Controllers
 {
+    [RoutePrefix("api/products")]
     public class ProductController : ApiController
     {
-        [HttpGet]
+        [HttpGet,Route("")]
         public IHttpActionResult Get() //Get Product List
         {
             ProductRepository products = new ProductRepository();
@@ -20,7 +21,7 @@ namespace PCHut_API.Controllers
             return Ok(allProducts);
         }
 
-        [HttpGet]
+        [HttpGet, Route("{id}")]
         public IHttpActionResult Get(int id) //Get Single Product
         {
             ProductRepository productRepository = new ProductRepository();
@@ -32,7 +33,7 @@ namespace PCHut_API.Controllers
             return Ok(singleProduct);
         }
 
-        [HttpPost]
+        [HttpPost, Route("")]
         public IHttpActionResult Post(Product product) //Creating Product
         {
             if (product == null)
@@ -45,7 +46,7 @@ namespace PCHut_API.Controllers
             return Created("abc", product);
         }
 
-        [HttpPut]
+        [HttpPut, Route("{id}")]
         public IHttpActionResult Put([FromUri] int id, [FromBody] Product product) //Edit Product
         {
             product.ProductId = id;
@@ -55,7 +56,7 @@ namespace PCHut_API.Controllers
         }
 
         [HttpPut]
-        [Route("api/products/changeProductStatus/{id}/{branchId}")]
+        [Route("changeProductStatus/{id}/{branchId}")]
         public IHttpActionResult ChangeProductStatus(int id /*productId*/, int branchId /*branchId*/) //Change Product Status
         {
             ProductRepository product1 = new ProductRepository();
@@ -76,7 +77,7 @@ namespace PCHut_API.Controllers
         }
 
         [HttpGet]
-        [Route("api/products/topLaptopDetails")]
+        [Route("topLaptopDetails")]
         public IHttpActionResult TopLaptopDetails()
         {
             ProductRepository products = new ProductRepository();

@@ -8,7 +8,7 @@ using System.Web.Http;
 
 namespace PCHut_API.Controllers
 {
-    [RoutePrefix("api/ProductSearch")]
+    [RoutePrefix("api/ProductSearches")]
     public class ProductSearchController : ApiController
     {
         ProductRepository productRepository = new ProductRepository();

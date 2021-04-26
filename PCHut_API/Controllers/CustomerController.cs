@@ -10,11 +10,13 @@ using PCHut_API.Repository;
 
 namespace PCHut_API.Controllers
 {
+    [RoutePrefix("api/customers")]
     public class CustomerController : ApiController
     {
+        
         private PcHutDbContext context;
 
-        [HttpGet, Route("api/customers/topThreeCustomerGraph")]
+        [HttpGet, Route("topThreeCustomerGraph")]
         public IHttpActionResult TopThreeCustomerGraph()
         {
             context = new PcHutDbContext();

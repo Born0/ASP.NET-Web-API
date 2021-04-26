@@ -14,7 +14,7 @@ namespace PCHut_API.Controllers
     {
         private CategoryRepository CategoryRepository = new CategoryRepository();
 
-        [Route(), HttpGet]
+        [Route(""), HttpGet]
         public IHttpActionResult Get() //Get Product List
         {
             return Ok(CategoryRepository.GetAll());

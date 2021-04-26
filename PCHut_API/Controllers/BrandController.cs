@@ -14,7 +14,7 @@ namespace PCHut_API.Controllers
     {
         private BrandRepository brandRepository = new BrandRepository();
 
-        [Route(),HttpGet]
+        [Route(""),HttpGet]
         public IHttpActionResult Get()
         {
             return Ok(brandRepository.GetAll());
