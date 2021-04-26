@@ -15,9 +15,9 @@ namespace PCHut_API.Controllers
         private BranchRepository branchRepository = new BranchRepository();
         [Route(), HttpGet]
         public IHttpActionResult Get() //Get Product List
-            {
+        {
                return Ok(branchRepository.GetAll());
-            }
+        }
 
         [Route("{id}"), HttpGet]
         public IHttpActionResult Get(int id)

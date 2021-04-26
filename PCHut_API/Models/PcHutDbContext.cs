@@ -1,5 +1,5 @@
 
-//using PCHut_API.Migrations;
+using PCHut_API.Migrations;
 using System;
 using System.Data.Entity;
 using System.Linq;
@@ -11,7 +11,7 @@ namespace PCHut_API.Models
        
         public PcHutDbContext(): base("name=PcHutDbContext")
         {
-            //Database.SetInitializer(new MigrateDatabaseToLatestVersion<PcHutDbContext, Configuration>());
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<PcHutDbContext, Configuration>());
         }
 
         
@@ -25,6 +25,7 @@ namespace PCHut_API.Models
         public virtual DbSet<Discount> Discounts { get; set; }
         public virtual DbSet<Invoice> Invoices { get; set; }
         public virtual DbSet<Product> Products { get; set; }
+        public virtual DbSet<DistributedProduct> DistributedProducts { get; set; }
         public virtual DbSet<SalesRecord> SalesRecords { get; set; }
     }
 

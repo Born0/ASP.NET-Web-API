@@ -18,5 +18,22 @@ namespace PCHut_API.Repository
             var laptop = context.Products.SqlQuery(@"select * from Products where Product_id in (select top 1 Product_id from Sales_record where Product_id in (select Product_id from Products where Category_id = (select Category_id from Categories where Categories.Name = 'laptop')) group by Product_id order by sum(Quantity) desc)").First();
             return laptop;
         }
+
+        public List<Product> Search(string name)
+        {
+            
+            return this.context.Products.Where(x => x.ProductName.Contains(name)).ToList();
+        }
+        public List<Product> SearchByType(string type)
+        {
+            List<Product> products = this.context.Products.Where(x => x.Special == type).ToList();
+            return products;
+        }
+        public List<Product> PriceFilter(float min, float max)
+        {
+            List<Product> products = this.context.Products.Where(x => x.Price >= min && x.Price <= max).ToList();
+            return products;
+        }
+
     }
 }

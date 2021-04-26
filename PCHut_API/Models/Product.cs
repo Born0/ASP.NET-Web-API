@@ -29,23 +29,17 @@ namespace PCHut_API.Models
         public int Warranty { get; set; }
         [Required]
         public double Price { get; set; }
-        [Required]
-        public int Quantity { get; set; }
+       
         [Required]
         public int Status { get; set; }
-        
+
         public string Image { get; set; }
-        [Required]
-        public int BranchId { get; set; }
-    
-        //[JsonIgnore]
-        public Branch Branch { get; set; }
-        //[JsonIgnore]
+       
         public Brand Brand { get; set; }
-        //[JsonIgnore]
+       
         public Category Category { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        //[JsonIgnore]
+       
         public ICollection<SalesRecord> SalesRecord { get; set; }
     }
 }
