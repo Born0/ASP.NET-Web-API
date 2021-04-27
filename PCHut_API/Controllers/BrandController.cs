@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using PCHut_API.View_Model;
 
 namespace PCHut_API.Controllers
 {
@@ -49,6 +50,20 @@ namespace PCHut_API.Controllers
         {
             brandRepository.Delete(id);
             return StatusCode(HttpStatusCode.NoContent);
+        }
+
+        [HttpGet, Route("topBrandDetails")]
+        public IHttpActionResult TopBrandDetails()
+        {
+            ProductRepository product = new ProductRepository();
+
+            DefaultViewModel productInfo = new DefaultViewModel();
+            productInfo = product.ProductInfoForTopBrand();
+
+            BrandRepository brandDetails = new BrandRepository();
+            Brand brand = brandDetails.BrandDetails(productInfo.Id);
+
+            return Ok(brand);
         }
     }
 }

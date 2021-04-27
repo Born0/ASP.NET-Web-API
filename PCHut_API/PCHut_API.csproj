@@ -145,6 +145,9 @@
     <Compile Include="Repository\ProductRepository.cs" />
     <Compile Include="Repository\Repository.cs" />
     <Compile Include="View_Model\BarChartModel.cs" />
+    <Compile Include="View_Model\DefaultViewModel.cs" />
+    <Compile Include="View_Model\SumGroupByModel.cs" />
+    <Compile Include="View_Model\TopBranchManagerModel.cs" />
     <Compile Include="View_Model\TopCustomerViewModel.cs" />
   </ItemGroup>
   <ItemGroup>

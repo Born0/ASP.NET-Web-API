@@ -13,7 +13,7 @@ namespace PCHut_API.Controllers
     [RoutePrefix("api/products")]
     public class ProductController : ApiController
     {
-        [HttpGet,Route("")]
+        [HttpGet, Route("")]
         public IHttpActionResult Get() //Get Product List
         {
             ProductRepository products = new ProductRepository();

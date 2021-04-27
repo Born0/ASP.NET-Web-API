@@ -6,6 +6,7 @@ using PCHut_API.Repository;
 using PCHut_API.Models;
 using System.Data.Entity.Infrastructure;
 using System.Data.SqlClient;
+using PCHut_API.View_Model;
 
 namespace PCHut_API.Repository
 {
@@ -41,6 +42,12 @@ namespace PCHut_API.Repository
         }
 
 
+
+        public DefaultViewModel ProductInfoForTopBrand()
+        {
+            DefaultViewModel customerInfo = context.Database.SqlQuery<DefaultViewModel>("select top 1 ProductId as Id, sum(quantity) as Column1 from SalesRecords where DeliveryStatus = 1 group by ProductId order by sum(Quantity) desc").First();
+            return customerInfo;
+        }
 
     }
 }
