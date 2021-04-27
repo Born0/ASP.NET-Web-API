@@ -9,7 +9,7 @@ using System.Web.Http;
 
 namespace PCHut_API.Controllers
 {
-    [RoutePrefix("api/admin")]
+    [RoutePrefix("api/admins")]
     public class AdminController : ApiController
     {
         private AdminRepository adminRepository = new AdminRepository();

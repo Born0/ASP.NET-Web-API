@@ -6,10 +6,11 @@ using System.Net.Http;
 using System.Web.Http;
 using PCHut_API.Models;
 using PCHut_API.Repository;
+using PCHut_API.View_Model;
 
 namespace PCHut_API.Controllers
 {
-    [RoutePrefix("api/branchManager")]
+    [RoutePrefix("api/branchManagers")]
     public class BranchManagerController : ApiController
     {
         BranchManagerRepository BranchManagerRepository = new BranchManagerRepository();
@@ -54,6 +55,15 @@ namespace PCHut_API.Controllers
         {
             BranchManagerRepository.Delete(id);
             return StatusCode(HttpStatusCode.NoContent);
+        }
+
+        [HttpGet, Route("topSeller")]
+        public IHttpActionResult TopSeller() //topSellerBranchManager
+        {
+            BranchManagerRepository branchManagerRepository = new BranchManagerRepository();
+            TopBranchManagerModel branchManager = branchManagerRepository.BranchManagerInfo();
+
+            return Ok(branchManager);
         }
     }
 }
