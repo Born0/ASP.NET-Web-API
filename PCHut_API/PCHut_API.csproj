@@ -99,6 +99,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Attribute\BasicAthenticationAttribute.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\BranchController.cs" />
     <Compile Include="Controllers\BranchManagerController.cs" />
@@ -106,6 +107,7 @@
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\CredentialController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
+    <Compile Include="Controllers\DistributedProductController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\ProductSearchController.cs" />
     <Compile Include="Global.asax.cs">
@@ -141,6 +143,7 @@
     <Compile Include="Repository\CategoryRepository.cs" />
     <Compile Include="Repository\CredentialRepository.cs" />
     <Compile Include="Repository\CustomerRepository.cs" />
+    <Compile Include="Repository\DistributedProductRepository.cs" />
     <Compile Include="Repository\IRepository.cs" />
     <Compile Include="Repository\ProductRepository.cs" />
     <Compile Include="Repository\Repository.cs" />

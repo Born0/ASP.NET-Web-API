@@ -84,5 +84,12 @@ namespace PCHut_API.Controllers
             Product laptop = products.TopLaptop();
             return Ok(laptop);
         }
+        [Route("{id}"), HttpDelete]
+        public IHttpActionResult Delete(int id)
+        {
+            ProductRepository productRepository = new ProductRepository();
+            productRepository.Delete(id);
+            return StatusCode(HttpStatusCode.NoContent);
+        }
     }
 }
