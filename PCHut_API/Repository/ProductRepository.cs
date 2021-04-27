@@ -34,6 +34,13 @@ namespace PCHut_API.Repository
             List<Product> products = this.context.Products.Where(x => x.Price >= min && x.Price <= max).ToList();
             return products;
         }
+        public List<Product> SearchByCategory(int id)
+        {
+            List<Product> products = this.context.Products.Where(x => x.CategoryId == id).ToList();
+            return products;
+        }
+
+
 
     }
 }
