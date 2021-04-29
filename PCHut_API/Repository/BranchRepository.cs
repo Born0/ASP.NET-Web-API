@@ -8,5 +8,12 @@ namespace PCHut_API.Repository
 {
     public class BranchRepository:Repository<Branch>
     {
+        PcHutDbContext context = new PcHutDbContext();
+
+        public List<Branch> GetBranchInfo(int id)
+        {
+            List<Branch> branchInfo = context.Database.SqlQuery<Branch>("select * from Branches where BranchId in (select BranchId from Branches where BranchId not in(select BranchId from DistributedProducts where ProductId = "+id+"))").ToList();
+            return branchInfo;
+        }
     }
 }

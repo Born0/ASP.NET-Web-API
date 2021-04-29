@@ -48,5 +48,13 @@ namespace PCHut_API.Controllers
             branchRepository.Delete(id);
             return StatusCode(HttpStatusCode.NoContent);
         }
+
+        [HttpGet, Route("getBranchNotAssignedForProduct/{id}")]
+        public IHttpActionResult GetBranchNotAssignedForProduct(int id /*productId*/) //this method is called to get branch info where the particular product is not assigned
+        {
+            BranchRepository branchRepository = new BranchRepository();
+            List<Branch> branchInfo = branchRepository.GetBranchInfo(id);
+            return Ok(branchInfo);
+        }
     }
 }
