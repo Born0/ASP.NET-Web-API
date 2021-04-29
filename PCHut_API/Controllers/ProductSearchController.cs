@@ -41,5 +41,10 @@ namespace PCHut_API.Controllers
             return Ok(productRepository.PriceFilter(min, max));
         }
         //price Filter <--
+
+        public IHttpActionResult SearchByCategory(int id)
+        {  
+            return Ok(productRepository.SearchByCategory(id));
+        }
     }
 }
