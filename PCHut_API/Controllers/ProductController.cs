@@ -40,6 +40,11 @@ namespace PCHut_API.Controllers
             {
                 return StatusCode(HttpStatusCode.NoContent);
             }
+            //Naming of a product-------------->
+            BrandRepository brandRepo = new BrandRepository();
+            CategoryRepository categoryRepo = new CategoryRepository(); 
+            product.ProductName = brandRepo.Get(product.BrandId).Name+product.ProductName + product.Details + categoryRepo.Get(product.CategoryId).Name;
+            //  <------------------
             product.Status = 1;
             ProductRepository productRepository = new ProductRepository();
             productRepository.Insert(product);

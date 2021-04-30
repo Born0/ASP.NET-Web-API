@@ -107,6 +107,7 @@
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\CredentialController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
+    <Compile Include="Controllers\InvoiceController.cs" />
     <Compile Include="Controllers\DistributedProductController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\ProductSearchController.cs" />
@@ -144,11 +145,13 @@
     <Compile Include="Repository\CredentialRepository.cs" />
     <Compile Include="Repository\CustomerRepository.cs" />
     <Compile Include="Repository\DistributedProductRepository.cs" />
+    <Compile Include="Repository\InvoiceRepository.cs" />
     <Compile Include="Repository\IRepository.cs" />
     <Compile Include="Repository\ProductRepository.cs" />
     <Compile Include="Repository\Repository.cs" />
     <Compile Include="View_Model\BarChartModel.cs" />
     <Compile Include="View_Model\DefaultViewModel.cs" />
+    <Compile Include="View_Model\DiscountReportViewModel.cs" />
     <Compile Include="View_Model\SumGroupByModel.cs" />
     <Compile Include="View_Model\TopBranchManagerModel.cs" />
     <Compile Include="View_Model\TopCustomerViewModel.cs" />
