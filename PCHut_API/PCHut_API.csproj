@@ -149,11 +149,14 @@
     <Compile Include="Repository\IRepository.cs" />
     <Compile Include="Repository\ProductRepository.cs" />
     <Compile Include="Repository\Repository.cs" />
+    <Compile Include="Repository\SalesRecordRepository.cs" />
     <Compile Include="View_Model\BarChartModel.cs" />
     <Compile Include="View_Model\DefaultViewModel.cs" />
     <Compile Include="View_Model\DiscountReportViewModel.cs" />
+    <Compile Include="View_Model\DiscountViewModel.cs" />
     <Compile Include="View_Model\SumGroupByModel.cs" />
     <Compile Include="View_Model\TopBranchManagerModel.cs" />
+    <Compile Include="View_Model\TopCategoryViewModel.cs" />
     <Compile Include="View_Model\TopCustomerViewModel.cs" />
   </ItemGroup>
   <ItemGroup>

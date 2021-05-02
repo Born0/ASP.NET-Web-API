@@ -65,5 +65,32 @@ namespace PCHut_API.Controllers
 
             return Ok(brand);
         }
+
+        [Route("TopBrandGraph/{id}"), HttpGet]
+        public IHttpActionResult TopBrandGraph(int id)
+        {
+            List<TopCategoryViewModel> temp = new List<TopCategoryViewModel>();
+            temp = brandRepository.TopBrands(id);
+            //List<TopCategoryViewModel> tbvm = new List<TopCategoryViewModel>();
+
+            var tbvm = temp.GroupBy(p => p.Id).Select(g => new { Id = g.Key, totalQuantity = g.Sum(p => p.Quantity) }).ToList();
+           
+
+
+
+            var newList = tbvm.OrderBy(x => x.totalQuantity);
+            var revList = newList.Reverse();// BrandId with highest quanity goes on top
+
+            List<BarChartModel> barCharts = new List<BarChartModel>();
+            foreach (var item in revList)
+            {
+                string name = brandRepository.Get(item.Id).Name;
+                BarChartModel barChart = new BarChartModel(name, item.totalQuantity);
+                barCharts.Add(barChart);
+            }
+            var lsitOfData = Newtonsoft.Json.JsonConvert.SerializeObject(barCharts);
+
+            return Ok(barCharts);
+        }
     }
 }

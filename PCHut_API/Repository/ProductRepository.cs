@@ -12,7 +12,7 @@ namespace PCHut_API.Repository
 {
     public class ProductRepository : Repository<Product>
     {
-        private PcHutDbContext context = new PcHutDbContext();
+       
 
         public Product TopLaptop()
         {

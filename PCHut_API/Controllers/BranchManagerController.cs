@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Threading;
 using System.Web.Http;
 using PCHut_API.Attribute;
@@ -13,10 +14,12 @@ using PCHut_API.View_Model;
 namespace PCHut_API.Controllers
 {
     [RoutePrefix("api/branchManagers")]
-    //Thread.CurrentPrincipal.Identity.Name == "admin"----Authentication
+     
     public class BranchManagerController : ApiController
     {
+      
         BranchManagerRepository BranchManagerRepository = new BranchManagerRepository();
+        
         [Route(""),HttpGet, BasicAthentication]
         public IHttpActionResult Get() 
         {
@@ -68,5 +71,7 @@ namespace PCHut_API.Controllers
 
             return Ok(branchManager);
         }
+        
+
     }
 }

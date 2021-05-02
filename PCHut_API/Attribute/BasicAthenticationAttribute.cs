@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Security.Principal;
 using System.Text;
 using System.Threading;
@@ -15,6 +16,7 @@ namespace PCHut_API.Attribute
 {
     public class BasicAthenticationAttribute : AuthorizationFilterAttribute
     {
+        
         public override void OnAuthorization(HttpActionContext actionContext)
         {
             base.OnAuthorization(actionContext);
@@ -25,8 +27,8 @@ namespace PCHut_API.Attribute
             else
             {
 
-                //string encode = actionContext.Request.Headers.Authorization.Parameter;
-                string encode = actionContext.Request.Headers.Authorization.ToString();
+                string encode = actionContext.Request.Headers.Authorization.Parameter;
+                //string encode = actionContext.Request.Headers.Authorization.ToString();
                 string decode = Encoding.UTF8.GetString(Convert.FromBase64String(encode));
                 string[] splitedText=decode.Split(new char[] {':'});
 
@@ -34,12 +36,11 @@ namespace PCHut_API.Attribute
                 string password = splitedText[1];
                 /////////// This section is hardCoded        -------->   
                 ///remove these lines to check authentication      
-                //userId = 1;
-                //password = "123";
-                
-                if (userId == "adm" && password=="12")
+
+                if (userId == "adm" && password == "12")
                 {
-                   Thread.CurrentPrincipal = new GenericPrincipal(new GenericIdentity(userId), null);
+
+                    Thread.CurrentPrincipal = new GenericPrincipal(new GenericIdentity(userId), null);
                 }
                 else
                 {
@@ -49,16 +50,17 @@ namespace PCHut_API.Attribute
 
                 /// Remove Comment from bellow to check authentication Logically-------------------------->
                 /// 
-                /* CredentialRepository credentialRepository = new CredentialRepository();
-                 Credential credential = credentialRepository.Get(userId);
-                 if(credential.UserId==userId && credential.Password== password)
-                 {
-                     Thread.CurrentPrincipal = new GenericPrincipal(new GenericIdentity(userId.ToString()), null);
-                 }
-                 else
-                 {
-                     actionContext.Response = actionContext.Request.CreateResponse(System.Net.HttpStatusCode.Unauthorized);
-                 }*/
+                /*int id = int.Parse(userId);
+                CredentialRepository credentialRepository = new CredentialRepository();
+                Credential credential = credentialRepository.Get(id);
+                if (credential.UserId == id && credential.Password == password)
+                {
+                    Thread.CurrentPrincipal = new GenericPrincipal(new GenericIdentity(id.ToString()), null);
+                }
+                else
+                {
+                    actionContext.Response = actionContext.Request.CreateResponse(System.Net.HttpStatusCode.Unauthorized);
+                }*/
                 //////  <---------------------------------------
             }
         }

@@ -9,7 +9,7 @@ namespace PCHut_API.Repository
 {
     public class DistributedProductRepository : Repository<DistributedProduct>
     {
-        PcHutDbContext context = new PcHutDbContext();
+        
 
         public List<DistributedProduct> ProductQuantityByBranch(int id)
         {
