@@ -1,5 +1,6 @@
 ﻿using PCHut_API.Models;
 using PCHut_API.Repository;
+using PCHut_API.View_Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -49,6 +50,26 @@ namespace PCHut_API.Controllers
         {
             CategoryRepository.Delete(id);
             return StatusCode(HttpStatusCode.NoContent);
+        }
+        [Route("TopCategoryGraph/{id}"), HttpGet]
+        public IHttpActionResult TopCategoryGraph(int id)
+        {
+            List<TopCategoryViewModel> tcvm = new List<TopCategoryViewModel>();
+            tcvm = CategoryRepository.TopCategory(id);
+            var newList = tcvm.OrderBy(x => x.Quantity);
+            var revList=newList.Reverse();// categoryId with highest quanity goes on top of list
+
+            List<BarChartModel> barCharts = new List<BarChartModel>();
+            foreach(var item in revList)
+            {
+                
+                string catName = CategoryRepository.Get(item.Id).Name; 
+                BarChartModel barChart = new BarChartModel(catName,(double)item.Quantity);
+                barCharts.Add(barChart);
+            }
+            var lsitOfData = Newtonsoft.Json.JsonConvert.SerializeObject(barCharts);
+
+            return Ok(barCharts);
         }
 
         [HttpGet, Route("categoryProductAmountChart")]

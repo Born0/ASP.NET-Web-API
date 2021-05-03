@@ -9,7 +9,7 @@ namespace PCHut_API.Repository
 {
     public class BranchManagerRepository : Repository<BranchManager>
     {
-        PcHutDbContext context = new PcHutDbContext();
+        
 
         public TopBranchManagerModel BranchManagerInfo()
         {
