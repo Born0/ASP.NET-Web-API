@@ -7,7 +7,6 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using PCHut_API.View_Model;
 
 namespace PCHut_API.Controllers
 {

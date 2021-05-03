@@ -163,3 +163,9 @@ D:\Final Term API Project\ASP.NET-Web-API\PCHut_API\bin\System.Runtime.CompilerS
 D:\Final Term API Project\ASP.NET-Web-API\PCHut_API\bin\System.Buffers.xml
 D:\Final Term API Project\ASP.NET-Web-API\PCHut_API\bin\System.Memory.xml
 D:\Final Term API Project\ASP.NET-Web-API\PCHut_API\bin\System.Runtime.CompilerServices.Unsafe.xml
+D:\Class\ASP .net\ASP.NET web-API\PCHut_API\bin\System.Buffers.dll
+D:\Class\ASP .net\ASP.NET web-API\PCHut_API\bin\System.Memory.dll
+D:\Class\ASP .net\ASP.NET web-API\PCHut_API\bin\System.Runtime.CompilerServices.Unsafe.dll
+D:\Class\ASP .net\ASP.NET web-API\PCHut_API\bin\System.Buffers.xml
+D:\Class\ASP .net\ASP.NET web-API\PCHut_API\bin\System.Memory.xml
+D:\Class\ASP .net\ASP.NET web-API\PCHut_API\bin\System.Runtime.CompilerServices.Unsafe.xml
