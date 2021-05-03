@@ -13,7 +13,7 @@ namespace PCHut_API.Models
         [Required]
         public int BranchId { get; set; }
 
-        [Required]
+        [Required, Range(0, int.MaxValue)]
         public int Quantity { get; set; }
 
         [Required]

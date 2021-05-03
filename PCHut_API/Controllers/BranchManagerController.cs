@@ -5,7 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Threading;
 using System.Web.Http;
-using PCHut_API.Attribute;
+//using PCHut_API.Attribute; //Changed
 using PCHut_API.Models;
 using PCHut_API.Repository;
 using PCHut_API.View_Model;
@@ -17,7 +17,7 @@ namespace PCHut_API.Controllers
     public class BranchManagerController : ApiController
     {
         BranchManagerRepository BranchManagerRepository = new BranchManagerRepository();
-        [Route(""),HttpGet, BasicAthentication]
+        [Route(""),HttpGet, /*BasicAthentication*/]//changed
         public IHttpActionResult Get() 
         {
             return Ok(BranchManagerRepository.GetAll());

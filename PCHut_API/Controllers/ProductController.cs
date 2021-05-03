@@ -6,7 +6,10 @@ using System.Net.Http;
 using System.Web.Http;
 using PCHut_API.Repository;
 using PCHut_API.Models;
-using System.Data.Entity.Infrastructure;
+using System.Security.Policy;
+using PCHut_API.View_Model;
+using System.IO;
+using System.Web;
 
 namespace PCHut_API.Controllers
 {
@@ -33,18 +36,54 @@ namespace PCHut_API.Controllers
             return Ok(singleProduct);
         }
 
-        [HttpPost, Route("")]
+        [HttpPost, Route("", Name = "ProductCreated")]
         public IHttpActionResult Post(Product product) //Creating Product
         {
             if (product == null)
             {
                 return StatusCode(HttpStatusCode.NoContent);
             }
-            product.Status = 1;
-            ProductRepository productRepository = new ProductRepository();
-            productRepository.Insert(product);
-            return Created("abc", product);
+            if (ModelState.IsValid)
+            {
+                product.Status = 1;
+                ProductRepository productRepository = new ProductRepository();
+                productRepository.Insert(product);
+                string url = Url.Link("ProductCreated", new { id = product.ProductId }); //A problem is occuring... Altough created successfully
+                return Created(url, product);
+                //return Created("abc", product);
+            }
+            return StatusCode(HttpStatusCode.NoContent);
         }
+
+        /*[HttpPost, Route("")]
+        public IHttpActionResult Post(Product product) //Creating Product
+        {
+            if (product == null)
+            {
+                return StatusCode(HttpStatusCode.NoContent);
+            }
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    string filePath = HttpContext.Current.Server.MapPath("~/Image/");
+                    string fileName = Path.GetFileName(product.ProductPic.FileName);
+
+                    string fullFilePath = Path.Combine(filePath, fileName);
+                    product.ProductPic.SaveAs(fullFilePath);
+                    product.Image = "~/Image/" + product.ProductPic.FileName;
+                }
+                catch (Exception ex) { }
+                product.Status = 1;
+                ProductRepository productRepository = new ProductRepository();
+                productRepository.Insert(product);
+                //string url = Url.Link("Product Created", new { id = product.ProductId });
+                //return Created(url, product);
+                return Created("abc", product);
+            }
+            return StatusCode(HttpStatusCode.NoContent);
+        }*/
 
         [HttpPut, Route("{id}")]
         public IHttpActionResult Put([FromUri] int id, [FromBody] Product product) //Edit Product
@@ -53,10 +92,15 @@ namespace PCHut_API.Controllers
             {
                 return StatusCode(HttpStatusCode.NoContent);
             }
-            product.ProductId = id;
-            ProductRepository productRepository = new ProductRepository();
-            productRepository.Update(product);
-            return Ok(product);
+
+            if (ModelState.IsValid)
+            {
+                product.ProductId = id;
+                ProductRepository productRepository = new ProductRepository();
+                productRepository.Update(product);
+                return Ok(product);
+            }
+            return StatusCode(HttpStatusCode.NoContent);
         }
 
         [HttpPut]
@@ -65,6 +109,11 @@ namespace PCHut_API.Controllers
         {
             ProductRepository product1 = new ProductRepository();
             Product singleProduct = product1.Get(id);
+
+            if (singleProduct == null)
+            {
+                return StatusCode(HttpStatusCode.NoContent);
+            }
 
             if (singleProduct.Status == 1)
             {

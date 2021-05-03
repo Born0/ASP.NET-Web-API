@@ -52,9 +52,13 @@ namespace PCHut_API.Controllers
                 return StatusCode(HttpStatusCode.NoContent);
             }
             distributedProduct.Status = 1;
-            DistributedProductRepository productRepository = new DistributedProductRepository();
-            productRepository.Insert(distributedProduct);
-            return Created("abc", distributedProduct);
+            if (ModelState.IsValid)
+            {
+                DistributedProductRepository productRepository = new DistributedProductRepository();
+                productRepository.Insert(distributedProduct);
+                return Created("abc", distributedProduct);
+            }
+            return StatusCode(HttpStatusCode.NoContent);
         }
 
         [HttpPut]
@@ -86,9 +90,13 @@ namespace PCHut_API.Controllers
                 return StatusCode(HttpStatusCode.NoContent);
             }
             product.DistributedProductId = id;
-            DistributedProductRepository distributedProductRepository = new DistributedProductRepository();
-            distributedProductRepository.Update(product);
-            return Ok(product);
+            if (ModelState.IsValid)
+            {
+                DistributedProductRepository distributedProductRepository = new DistributedProductRepository();
+                distributedProductRepository.Update(product);
+                return Ok(product);
+            }
+            return StatusCode(HttpStatusCode.NoContent);
         }
     }
 }

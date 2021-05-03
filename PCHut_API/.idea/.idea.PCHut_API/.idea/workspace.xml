@@ -23,8 +23,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d0ecfbd0-d784-47d7-8c4d-9180fad8f78c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.PCHut_API/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PCHut_API/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.PCHut_API/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PCHut_API/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/config/applicationhost.config" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/config/applicationhost.config" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.vs/PCHut_API/v16/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/PCHut_API/v16/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/BranchController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/BranchController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/BranchManagerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/BranchManagerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/CategoryController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/CategoryController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/DistributedProductController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/DistributedProductController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/ProductController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/ProductController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/DistributedProduct.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/DistributedProduct.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/Product.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Product.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PCHut_API.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/PCHut_API.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Repository/BranchRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/BranchRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Repository/CategoryRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/CategoryRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/PCHut_API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/PCHut_API.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/PCHut_API.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/PCHut_API.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/PCHut_API.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/PCHut_API.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/PCHut_API.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/PCHut_API.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/PCHut_API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/PCHut_API.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/PCHut_API.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/PCHut_API.pdb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +52,16 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/View_Model/TopBranchViewModel.cs" />
+        <option value="$PROJECT_DIR$/Repository/BranchRepository.cs" />
+        <option value="$PROJECT_DIR$/Controllers/BranchController.cs" />
+        <option value="$PROJECT_DIR$/Controllers/ProductController.cs" />
+      </list>
+    </option>
   </component>
   <component name="ProjectId" id="1reEn3lR2ZSSSMvJc2gxLyOnvYT" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -75,13 +104,15 @@
       <option name="presentableId" value="Default" />
       <updated>1619328319278</updated>
       <workItem from="1619328323576" duration="293000" />
+      <workItem from="1619880150607" duration="10852000" />
+      <workItem from="1619965810785" duration="1940000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="UnityProjectConfiguration" hasMinimizedUI="null" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -93,11 +124,28 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1619970048079">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1619970048079" />
+    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1619970048079">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1619970048079" />
+    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1619970048079">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1619970048079" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1619970048079">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1619970048079" />
     <state x="277" y="57" key="SettingsEditor" timestamp="1619328519125">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using PCHut_API.View_Model;
 
 namespace PCHut_API.Controllers
 {
@@ -55,6 +56,90 @@ namespace PCHut_API.Controllers
             BranchRepository branchRepository = new BranchRepository();
             List<Branch> branchInfo = branchRepository.GetBranchInfo(id);
             return Ok(branchInfo);
+        }
+
+        [HttpGet, Route("branchReportSales")]
+        public IHttpActionResult SalesInfoByBranch()
+        {
+            BranchRepository branchRepository = new BranchRepository();
+            var list = branchRepository.AllBranchSales();
+            List<BranchSalesViewModel> branchList = new List<BranchSalesViewModel>();
+
+            foreach (SumGroupByModel sgm in list)
+            {
+                BranchRepository repository = new BranchRepository();
+
+                Branch branchDetails = repository.Get(sgm.Id);
+                BranchSalesViewModel bsvm = new BranchSalesViewModel();
+
+                bsvm.Id = sgm.Id;
+                bsvm.BranchName = branchDetails.Name;
+                bsvm.TotalSalesAmount = sgm.Column1;
+
+                branchList.Add(bsvm);
+            }
+
+            return Ok(branchList);
+        }
+
+        [HttpGet, Route("salesReportByBranch/{id}")]
+        public IHttpActionResult SalesReportByBranch(int id)
+        {
+            BranchRepository branchRepository = new BranchRepository();
+            List<SumGroupByModel> brvm = branchRepository.SingleBranch(id);
+
+            List<BarChartModel> chart = new List<BarChartModel>();
+
+            foreach(SumGroupByModel sumGroupByModel in brvm)
+            {
+                BarChartModel barChartModel = new BarChartModel(sumGroupByModel.Id.ToString(), sumGroupByModel.Column1);
+                chart.Add(barChartModel);
+            }
+
+            return Ok(chart);
+        }
+
+        [HttpGet, Route("singleBranchMonthlySales/{id}/{year}")]
+        public IHttpActionResult SingleBranchMonthlySales(int id, int year)
+        {
+            BranchRepository branchRepository = new BranchRepository();
+            List<SumGroupByModel> brvm = branchRepository.SingleBranchMonthlySales(id, year);
+
+            List<BarChartModel> chart = new List<BarChartModel>();
+
+            string[] months = { "Jan", "Feb", "March", "April", "May", "June", "July", "Aug", "Sep", "Oct", "Nov", "Dec" };
+
+            int i, j;
+            int count = brvm.Count();
+
+            //Adding All the Months and Giving the Sum Amount Zero to the chart
+            for(i = 0; i < 12; i++)
+            {
+                BarChartModel barChartModel = new BarChartModel(months[i], 0);
+                chart.Add(barChartModel);
+            }
+
+            //Now the Assigning Value to the months where the Sum Amount exists for that particular month
+            for (i = 0; i < count; i++)
+            {
+                chart[brvm[i].Id - 1].Y = brvm[i].Column1;
+            }
+            return Ok(chart);
+        }
+        
+        [HttpGet, Route("topBranchDetails")]
+        public IHttpActionResult TopBranchDetails()
+        {
+            SumGroupByModel branchSumAmount = branchRepository.TopSellingBranch();
+
+            Branch branch = branchRepository.Get(branchSumAmount.Id);  
+            
+            TopBranchViewModel topSellingBranchDetails = new TopBranchViewModel();
+            topSellingBranchDetails.Name = branch.Name;
+            topSellingBranchDetails.Address = branch.Address;
+            topSellingBranchDetails.TotalSalesAmount = branchSumAmount.Column1;
+
+            return Ok(topSellingBranchDetails);
         }
     }
 }

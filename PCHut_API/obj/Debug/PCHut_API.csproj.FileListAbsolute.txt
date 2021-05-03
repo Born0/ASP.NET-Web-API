@@ -157,3 +157,9 @@ D:\Final Term API Project\ASP.NET-Web-API\PCHut_API\bin\System.Web.Cors.dll
 D:\Final Term API Project\ASP.NET-Web-API\PCHut_API\bin\System.Web.Http.Cors.dll
 D:\Final Term API Project\ASP.NET-Web-API\PCHut_API\bin\System.Web.Http.Cors.xml
 D:\Final Term API Project\ASP.NET-Web-API\PCHut_API\obj\Debug\PCHut_API.Migrations.NewTableAdded.resources
+D:\Final Term API Project\ASP.NET-Web-API\PCHut_API\bin\System.Buffers.dll
+D:\Final Term API Project\ASP.NET-Web-API\PCHut_API\bin\System.Memory.dll
+D:\Final Term API Project\ASP.NET-Web-API\PCHut_API\bin\System.Runtime.CompilerServices.Unsafe.dll
+D:\Final Term API Project\ASP.NET-Web-API\PCHut_API\bin\System.Buffers.xml
+D:\Final Term API Project\ASP.NET-Web-API\PCHut_API\bin\System.Memory.xml
+D:\Final Term API Project\ASP.NET-Web-API\PCHut_API\bin\System.Runtime.CompilerServices.Unsafe.xml

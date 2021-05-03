@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using PCHut_API.View_Model;
 
 namespace PCHut_API.Controllers
 {
@@ -50,5 +51,21 @@ namespace PCHut_API.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
+        [HttpGet, Route("categoryProductAmountChart")]
+        public IHttpActionResult CategoryProductAmountChart()
+        {
+            CategoryRepository categoryRepository = new CategoryRepository();
+            var list = categoryRepository.NumberOfProductsInCategory();
+
+            List<BarChartModel> categoriesProductAmount = new List<BarChartModel>();
+
+            foreach (var data in list)
+            {
+                BarChartModel chart = new BarChartModel(data.Name, data.Count);
+                categoriesProductAmount.Add(chart);
+            }
+
+            return Ok(categoriesProductAmount);
+        }
     }
 }

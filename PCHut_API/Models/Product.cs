@@ -3,6 +3,8 @@ namespace PCHut_API.Models
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Web;
     using Newtonsoft.Json;
 
     public partial class Product
@@ -25,16 +27,19 @@ namespace PCHut_API.Models
         public string Details { get; set; }
         [Required]
         public string Special { get; set; }
-        [Required]
+        [Required, Range(0, int.MaxValue)]
         public int Warranty { get; set; }
-        [Required]
+        [Required, Range(1.0, Double.MaxValue)]
         public double Price { get; set; }
        
         [Required]
         public int Status { get; set; }
 
         public string Image { get; set; }
-       
+
+        [NotMapped]
+        public HttpPostedFileBase ProductPic { get; set; }
+
         public Brand Brand { get; set; }
        
         public Category Category { get; set; }

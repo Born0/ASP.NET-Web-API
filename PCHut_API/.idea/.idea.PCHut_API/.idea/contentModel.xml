@@ -10,29 +10,42 @@
       </e>
       <e p="bin" t="ExcludeRecursive" />
       <e p="Controllers" t="Include">
+        <e p="AdminController.cs" t="Include" />
+        <e p="BranchController.cs" t="Include" />
+        <e p="BranchManagerController.cs" t="Include" />
+        <e p="BrandController.cs" t="Include" />
+        <e p="CategoryController.cs" t="Include" />
+        <e p="CredentialController.cs" t="Include" />
+        <e p="CustomerController.cs" t="Include" />
+        <e p="DistributedProductController.cs" t="Include" />
         <e p="ProductController.cs" t="Include" />
+        <e p="ProductSearchController.cs" t="Include" />
       </e>
       <e p="Global.asax" t="Include" />
       <e p="Global.asax.cs" t="Include" />
       <e p="Migrations" t="Include">
-        <e p="202104231917470_InitialDb.cs" t="Include" />
-        <e p="202104231917470_InitialDb.designer.cs" t="Include" />
-        <e p="202104231917470_InitialDb.resx" t="Include" />
+        <e p="202104250929087_InitialDb.cs" t="Include" />
+        <e p="202104250929087_InitialDb.designer.cs" t="Include" />
+        <e p="202104250929087_InitialDb.resx" t="Include" />
+        <e p="202104261916136_NewTableAdded.cs" t="Include" />
+        <e p="202104261916136_NewTableAdded.Designer.cs" t="Include" />
+        <e p="202104261916136_NewTableAdded.resx" t="Include" />
         <e p="Configuration.cs" t="Include" />
       </e>
       <e p="Models" t="Include">
         <e p="Admin.cs" t="Include" />
         <e p="Branch.cs" t="Include" />
-        <e p="Branch_Manager.cs" t="Include" />
+        <e p="BranchManager.cs" t="Include" />
         <e p="Brand.cs" t="Include" />
         <e p="Category.cs" t="Include" />
         <e p="Credential.cs" t="Include" />
         <e p="Customer.cs" t="Include" />
         <e p="Discount.cs" t="Include" />
+        <e p="DistributedProduct.cs" t="Include" />
         <e p="Invoice.cs" t="Include" />
         <e p="PcHutDbContext.cs" t="Include" />
         <e p="Product.cs" t="Include" />
-        <e p="Sales_Record.cs" t="Include" />
+        <e p="SalesRecord.cs" t="Include" />
       </e>
       <e p="obj" t="ExcludeRecursive" />
       <e p="packages" t="ExcludeRecursive" />
@@ -44,12 +57,27 @@
       </e>
       <e p="Repository" t="Include">
         <e p="AdminRepository.cs" t="Include" />
-        <e p="Branch_ManagerRepository.cs" t="Include" />
+        <e p="BranchManagerRepository.cs" t="Include" />
+        <e p="BranchRepository.cs" t="Include" />
+        <e p="BrandRepository.cs" t="Include" />
+        <e p="CategoryRepository.cs" t="Include" />
         <e p="CredentialRepository.cs" t="Include" />
         <e p="CustomerRepository.cs" t="Include" />
+        <e p="DistributedProductRepository.cs" t="Include" />
         <e p="IRepository.cs" t="Include" />
         <e p="ProductRepository.cs" t="Include" />
         <e p="Repository.cs" t="Include" />
+      </e>
+      <e p="View_Model" t="Include">
+        <e p="BarChartModel.cs" t="Include" />
+        <e p="BranchReportViewModel.cs" t="Include" />
+        <e p="BranchSalesViewModel.cs" t="Include" />
+        <e p="CategoryProductViewModel.cs" t="Include" />
+        <e p="DefaultViewModel.cs" t="Include" />
+        <e p="SumGroupByModel.cs" t="Include" />
+        <e p="TopBranchManagerModel.cs" t="Include" />
+        <e p="TopBranchViewModel.cs" t="Include" />
+        <e p="TopCustomerViewModel.cs" t="Include" />
       </e>
       <e p="Web.config" t="Include" />
       <e p="Web.Debug.config" t="Include" />
